@@ -4,7 +4,7 @@ class Constants {
 
     companion object {
 
-        const val url: String = "https://hokocloud.com"
+        const val url: String = "https://ukrainetransport.info"
         const val firebaseTopic: String = "railroad_topic"
     }
 }

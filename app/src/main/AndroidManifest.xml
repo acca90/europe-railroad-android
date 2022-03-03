@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name="com.railroad.commons.FirebaseMessagingCloud"
+            android:name="com.europerailroad.app.features.commons.FirebaseMessagingCloud"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

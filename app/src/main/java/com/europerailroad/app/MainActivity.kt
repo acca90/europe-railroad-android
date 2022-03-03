@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.europerailroad.app.features.commons.Constants
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.messaging.FirebaseMessaging
+import com.railroad.railroad.BuildConfig
 import com.railroad.railroad.R
 import java.util.*
 
@@ -13,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
+        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(!BuildConfig.DEBUG)
         setContentView(R.layout.activity_main)
         subscribeToFirebaseTopic()
         openBrowser()
