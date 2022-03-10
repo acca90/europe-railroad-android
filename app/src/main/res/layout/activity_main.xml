@@ -4,11 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.railroad.features.MainActivity">
+    tools:context="com.europerailroad.app.MainActivity">
 
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_info"
+        android:textColor="@color/black"
+        android:textSize="21dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        com:layout_constraintBottom_toBottomOf="parent"
+        com:layout_constraintEnd_toEndOf="parent"
+        com:layout_constraintStart_toStartOf="parent"
+        com:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorAscent">#FFBB86FC</color>
-    <color name="colorPrimary">#FF6200EE</color>
-    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="colorAscent">#52B5EC</color>
+    <color name="colorPrimary">#018BD6</color>
+    <color name="colorPrimaryDark">#036BA3</color>
 
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>

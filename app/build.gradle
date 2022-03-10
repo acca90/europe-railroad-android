@@ -8,14 +8,33 @@ apply plugin: 'com.google.firebase.crashlytics'
 android {
     compileSdk 31
 
-    defaultConfig {
-        minSdk 23
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
-        applicationId "com.europerailroad.app"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.debug
+    Properties versionProps = new Properties()
+    def versionPropsFile = file('version.properties')
+
+    if (versionPropsFile.canRead()) {
+
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        def code = versionProps['VERSION_CODE'].toInteger() + 1
+
+        def version_name = versionProps['VERSION_NAME']
+
+        defaultConfig {
+            minSdk 23
+            targetSdk 31
+            versionCode 1
+            versionName "1.0"
+            applicationId "com.europerailroad.transportuk"
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            signingConfig signingConfigs.debug
+
+
+            versionProps['VERSION_CODE']=code.toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+
+            versionCode code
+            versionName version_name
+        }
     }
 
     buildTypes {
@@ -52,5 +71,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-messaging'
+
+    implementation 'androidx.browser:browser:1.4.0'
 }
 apply plugin: 'com.google.gms.google-services'
